@@ -321,3 +321,26 @@ padding: 20px 0;
 color: #1B293A;
 font-size: 16px;
 }
+
+/* Adjustments for tablets */
+@media (max-width: 768px) {
+    .header-txt h1 {
+        font-size: 60px; /* Adjust font size for smaller screens */
+    }
+    .header-txt p {
+        padding: 0 50px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Adjustments for mobile phones */
+@media (max-width: 480px) {
+    .header-txt h1 {
+        font-size: 40px; /* Further reduce font size for very small screens */
+    }
+    .header-txt p {
+        padding: 0 20px; /* Reduce padding for very small screens */
+    }
+    .general-1, .general-2, .general-3, .general-4, .general-5, .general-6 {
+        padding: 100px 25px; /* Adjust padding for smaller general sections */
+    }
+}

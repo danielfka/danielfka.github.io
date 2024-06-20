@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.5.1",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this._interceptClickListeners(this),window.addEventListener("pageshow",e=>{this.persisted=e.persisted,this.everythingLoaded&&this._triggerLastFunctions()}),document.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(e){if(document.hidden){e._triggerListener();return}this.triggerEvents.forEach(t=>window.addEventListener(t,e.userEventHandler,{passive:!0})),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(e=>window.removeEventListener(e,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._disableOtherEventListeners(e.target,!0),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._disableOtherEventListeners(e.target,!1),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._disableOtherEventListeners(e.target,!1),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))})}_interceptClickListeners(e){EventTarget.prototype.addEventListenerBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(t,i,r){"click"!==t||e.windowLoaded||i===e.clickHandler||e.interceptedClickListeners.push({target:this,func:i,options:r}),(this||window).addEventListenerBase(t,i,r)}}_disableOtherEventListeners(e,t){this.interceptedClickListeners.forEach(i=>{i.target===e&&(t?e.removeEventListener("click",i.func,i.options):e.addEventListener("click",i.func,i.options))}),e.parentNode!==document.documentElement&&this._disableOtherEventListeners(e.parentNode,t)}_waitForPendingClicks(){return new Promise(e=>{this._isClickPending?this._pendingClickFinished=e:e()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(e,t,i){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(i,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach(t=>{let i=t.getAttribute("data-rocket-src");if(i&&0!==i.indexOf("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{let r=new URL(i).origin;r!==location.origin&&e.push({src:r,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}catch(n){}}}),e=[...new Map(e.map(e=>[JSON.stringify(e),e])).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._pendingWebpackRequests(this),await this._triggerWindowLoad()}catch(e){console.error(e)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{e.hasAttribute("data-rocket-src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)})}async _transformScript(e){if(await this._littleBreath(),!0===e.noModule&&"noModule"in HTMLScriptElement.prototype){e.setAttribute("data-rocket-status","skipped");return}return new Promise(t=>{let i;function r(){(i||e).setAttribute("data-rocket-status","executed"),t()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)i=document.createElement("script"),[...e.attributes].forEach(e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),"data-rocket-src"===t&&(t="src"),i.setAttribute(t,e.nodeValue))}),e.text&&(i.text=e.text),i.hasAttribute("src")?(i.addEventListener("load",r),i.addEventListener("error",function(){i.setAttribute("data-rocket-status","failed"),t()}),setTimeout(()=>{i.isConnected||t()},1)):(i.text=e.text,r()),e.parentNode.replaceChild(i,e);else{let n=e.getAttribute("data-rocket-type"),s=e.getAttribute("data-rocket-src");n?(e.type=n,e.removeAttribute("data-rocket-type")):e.removeAttribute("type"),e.addEventListener("load",r),e.addEventListener("error",function(){e.setAttribute("data-rocket-status","failed"),t()}),s?(e.removeAttribute("data-rocket-src"),e.src=s):e.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(e.text)))}}catch(a){e.setAttribute("data-rocket-status","failed"),t()}})}async _loadScriptsFromList(e){let t=e.shift();return t&&t.isConnected?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var i=document.createDocumentFragment();e.forEach(e=>{let r=e.getAttribute&&e.getAttribute("data-rocket-src")||e.src;if(r){let n=document.createElement("link");n.href=r,n.rel=t,"preconnect"!==t&&(n.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),e.crossOrigin&&(n.crossOrigin=e.crossOrigin),e.integrity&&(n.integrity=e.integrity),i.appendChild(n),this.trash.push(n)}}),document.head.appendChild(i)}_delayEventListeners(e){let t={};function i(i,r){return t[r].eventsToRewrite.indexOf(i)>=0&&!e.everythingLoaded?"rocket-"+i:i}function r(e,r){var n;!t[n=e]&&(t[n]={originalFunctions:{add:n.addEventListener,remove:n.removeEventListener},eventsToRewrite:[]},n.addEventListener=function(){arguments[0]=i(arguments[0],n),t[n].originalFunctions.add.apply(n,arguments)},n.removeEventListener=function(){arguments[0]=i(arguments[0],n),t[n].originalFunctions.remove.apply(n,arguments)}),t[e].eventsToRewrite.push(r)}function n(t,i){let r=t[i];t[i]=null,Object.defineProperty(t,i,{get:()=>r||function(){},set(n){e.everythingLoaded?r=n:t["rocket"+i]=r=n}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t;function i(t){return e.everythingLoaded?t:t.split(" ").map(e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e).join(" ")}function r(r){if(r&&r.fn&&!e.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(t){return e.domReadyFired?t.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>t.bind(document)(r)),r([])};let n=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let t=arguments[0][e];delete arguments[0][e],arguments[0][i(e)]=t})),n.apply(this,arguments),this},e.allJQueries.push(r)}t=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>t,set(e){r(e)}})}async _pendingWebpackRequests(e){let t=document.querySelector("script[data-webpack]");async function i(){return new Promise(e=>{t.addEventListener("load",e),t.addEventListener("error",e)})}t&&(await i(),await e._requestAnimFrame(),await e._pendingWebpackRequests(e))}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async _triggerWindowLoad(){await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(e=>e(window).trigger("rocket-jquery-load")),await this._littleBreath();let e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}_triggerLastFunctions(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}_handleDocumentWrite(){let e=new Map;document.write=document.writeln=function(t){let i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+t);let r=document.createRange(),n=i.parentElement,s=e.get(i);void 0===s&&(s=i.nextSibling,e.set(i,s));let a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(e=>setTimeout(e)):new Promise(e=>requestAnimationFrame(e))}_emptyTrash(){this.trash.forEach(e=>e.remove())}static run(){let e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/favicon.ico" type="image/x-icon"/>
+			<link rel="stylesheet" href="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/css/style.css">
+		
+    <link rel="stylesheet" href="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/css/widgets.css">
+    <link rel="stylesheet" href="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/css/responsive.css">
+
+	<script type="rocketlazyloadscript">(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v21.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>I&#039;m staying at Real Madrid, says Cristiano Ronaldo - The Statesman</title>
+	<link rel="canonical" href="https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="I&#039;m staying at Real Madrid, says Cristiano Ronaldo - The Statesman" />
+	<meta property="og:description" content="Ronaldo said he is staying put at Real Madrid to plunder more silverware." />
+	<meta property="og:url" content="https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html" />
+	<meta property="og:site_name" content="The Statesman" />
+	<meta property="article:publisher" content="https://www.facebook.com/thestatesman1875/" />
+	<meta property="article:published_time" content="2017-07-25T15:19:56+00:00" />
+	<meta property="og:image" content="https://www.thestatesman.com/wp-content/uploads/2017/08/1496915873-cristiano-ronaldo-uefa-champions-league-final-real-madrid-vs-juventus.jpg" />
+	<meta property="og:image:width" content="926" />
+	<meta property="og:image:height" content="517" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="AFP" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@TheStatesmanLtd" />
+	<meta name="twitter:site" content="@TheStatesmanLtd" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="AFP" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html","url":"https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html","name":"I'm staying at Real Madrid, says Cristiano Ronaldo - The Statesman","isPartOf":{"@id":"https://www.thestatesman.com/#website"},"primaryImageOfPage":{"@id":"https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html#primaryimage"},"image":{"@id":"https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html#primaryimage"},"thumbnailUrl":"https://www.thestatesman.com/wp-content/uploads/2017/08/1496915873-cristiano-ronaldo-uefa-champions-league-final-real-madrid-vs-juventus.jpg","datePublished":"2017-07-25T15:19:56+00:00","dateModified":"2017-07-25T15:19:56+00:00","author":{"@id":"https://www.thestatesman.com/#/schema/person/cd68b4e31c44f4ed4cc2e59e1a9e4bcc"},"breadcrumb":{"@id":"https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html#primaryimage","url":"https://www.thestatesman.com/wp-content/uploads/2017/08/1496915873-cristiano-ronaldo-uefa-champions-league-final-real-madrid-vs-juventus.jpg","contentUrl":"https://www.thestatesman.com/wp-content/uploads/2017/08/1496915873-cristiano-ronaldo-uefa-champions-league-final-real-madrid-vs-juventus.jpg","width":926,"height":517,"caption":"Cristiano Ronaldo (Photo: AFP)"},{"@type":"BreadcrumbList","@id":"https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.thestatesman.com/"},{"@type":"ListItem","position":2,"name":"Sports","item":"https://www.thestatesman.com/sports"},{"@type":"ListItem","position":3,"name":"I&#8217;m staying at Real Madrid, says Cristiano Ronaldo"}]},{"@type":"WebSite","@id":"https://www.thestatesman.com/#website","url":"https://www.thestatesman.com/","name":"The Statesman","description":"The Statesman","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.thestatesman.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.thestatesman.com/#/schema/person/cd68b4e31c44f4ed4cc2e59e1a9e4bcc","name":"AFP","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.thestatesman.com/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/90cbe5cdfcfadcae3465810ac2d73142?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/90cbe5cdfcfadcae3465810ac2d73142?s=96&d=mm&r=g","caption":"AFP"},"url":"https://www.thestatesman.com/author/afpthestatesman-com"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+
+<link rel="alternate" type="application/rss+xml" title="The Statesman &raquo; Stories Feed" href="https://www.thestatesman.com/web-stories/feed/"><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.thestatesman.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.thestatesman.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<link rel="https://api.w.org/" href="https://www.thestatesman.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.thestatesman.com/wp-json/wp/v2/posts/1500996138" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.thestatesman.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.thestatesman.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.6" />
+<link rel='shortlink' href='https://www.thestatesman.com/?p=1500996138' />
+<link rel="alternate" type="application/json+oembed" href="https://www.thestatesman.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.thestatesman.com%2Fsports%2Fi-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.thestatesman.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.thestatesman.com%2Fsports%2Fi-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html&#038;format=xml" />
+<link rel="pingback" href="https://www.thestatesman.com/xmlrpc.php">
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-6FB23CPRMZ"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6FB23CPRMZ');
+</script>
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="amphtml" href="https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html/amp" />		<style type="text/css" id="wp-custom-css">
+			.slick-active {display:none; }
+
+.loop-grid-3 .first-post .post-title::after, .divider-wave::after { background:none; }
+
+
+@media only screen and (max-width: 600px) {
+.entry-main-content { margin:10px;}
+
+	.border-radius-2, .border-radius-2 img { width: 100%; height: auto; }
+}
+
+@media (max-width: 767px){
+	.single-content .image.mb-30.m-auto.text-center.border-radius-2{height: auto;}
+	.related-posts {padding: 0 10px;}
+}
+
+.entry-main-content > figure img { width: 100% !important; height: 100% !important; }
+
+@media (max-width: 767px){
+    .main-header.header-style-2 .header-tools {right: 3px;}
+    .main-header.header-style-2 h1.logo.d-inline {width: 168px;}
+}
+
+.liveblog-entry {
+    background: none;
+    padding: 0.9375rem 1.25rem;
+    border: 1px solid #c8c8c8;
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+.liveblog-entry-aside{float: left;flex-basis: 95px;}
+
+.liveblog-entry-main{
+    border-left: 1px solid #c8c8c8;
+    float: right;
+    padding-left: 20px;
+    width: 87%;
+}
+.liveblog-meta-time span{
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+    line-height: 23px;
+    text-transform: capitalize;
+    }
+.liveblog-meta-time span:first-child{        color: #cf0000;
+    padding-bottom: 2px;
+    display: block;
+}
+.liveblog-entry-aside a{text-decoration: none;}
+
+@media only screen and (max-width: 768px){
+    .liveblog-entry{padding: 0;border: 0;display: block;overflow: hidden;}
+    .liveblog-entry-aside{display: block;border-bottom: 1px solid #c8c8c8;padding-bottom: 20px;width: 100%;}
+    .liveblog-entry-main{    width: 100%;
+    border: none;
+    padding-left: 0;}
+	.liveblog-entry-main { width: 63%; float:left; }
+}
+
+
+
+@media only screen and (max-width: 767px){
+	.entry-main-content.dropcap.wow.fadeIn.animated #wpcom-liveblog-container .liveblog-entry-main{
+		width:99%;
+	}
+	article.entry-wraper.mb-50 {
+			width:100%;
+}
+	
+}
+		</style>
+		<script type="application/ld+json">{
+    "@context": "http:\/\/schema.org",
+    "@type": "newsarticle",
+    "inLanguage": "en",
+    "url": "https:\/\/www.thestatesman.com\/sports\/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html",
+    "articleBody": "&lt;p&gt;Ending weeks of speculation about his future, Cristiano Ronaldo has told a Spanish newspaper he is staying put at Real Madrid to plunder more silverware.&lt;\/p&gt;\r\n\r\n&lt;p&gt;&ldquo;To win important trophies with my club and the personal honours last season was brilliant, to do it again would be nice,&rdquo; Ronaldo told the sports daily Marca on Tuesday in an interview from Shanghai.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Ronaldo&#039;s declaration of intent to remain at the Bernabeu for the upcoming season comes despite rumours of his departure which surfaced last month in Portuguese newspaper O Globo.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Those reports were founded on his apparent feeling of abandonment by his club over his run-in with the Spanish tax authorities.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Ronaldo, 32, has been summoned to appear before a&nbsp;judge near Madrid on July 31 to answer four counts of evading 14.7 million euros ($16.8 million) in taxes.&lt;\/p&gt;\r\n\r\n&lt;p&gt;The four-time Ballon d&#039;Or winner has protested his innocence with O Globo saying he had threatened to leave Real over the investigation.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Since extending his contract last November until 2021, Ronaldo is the highest paid sports star in the world with $93 million (83m euro) in 2016-2017, according to Forbes magazine.&lt;\/p&gt;\r\n\r\n&lt;p&gt;On Saturday Real manager Zinedine Zidane assured Real supporters that the superstar striker &ldquo;was on holiday and would be back with us on (August) 5&rdquo;.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Ronaldo has been given leave to miss the club&#039;s pre- season US tour and Zidane, speaking in Los Angeles, insisted that he would be back at the club &ldquo;on the fifth (of August) and I think he&#039;ll stay for the next two or three years he&#039;s got left with us.&rdquo;&lt;\/p&gt;\r\n\r\n&lt;p&gt;In Tuesday&#039;s Marca interview Ronaldo also looked ahead to the 2018 World Cup with European champions Portugal.&lt;br \/&gt;\r\n&ldquo;We still have to qualify but I&#039;m hoping that Portugal can win an incredible title.&rdquo;&lt;\/p&gt;\r\n",
+    "articleSection": "Sports",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "url": "https:\/\/www.thestatesman.com\/sports\/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html"
+    },
+    "headline": "I&#8217;m staying at Real Madrid, says Cristiano Ronaldo",
+    "description": "&lt;p&gt;&lt;em&gt;Ronaldo said he is staying put at Real Madrid to plunder more silverware.&lt;\/em&gt;&lt;\/p&gt;\r\n",
+    "datePublished": "2017-07-25T15:19:56+05:30",
+    "dateModified": "2017-07-25T15:19:56+05:30",
+    "publisher": {
+        "@type": "Organization",
+        "name": "thestatesman",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/www.thestatesman.com\/wp-content\/themes\/statesmantheme\/images\/the-statesman-logo-new.png",
+            "width": "280",
+            "height": "64"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "AFP",
+        "url": "https:\/\/www.thestatesman.com\/author\/afpthestatesman-com"
+    },
+    "image": {
+        "@type": "ImageObject",
+        "url": "https:\/\/www.thestatesman.com\/wp-content\/uploads\/2017\/08\/1496915873-cristiano-ronaldo-uefa-champions-league-final-real-madrid-vs-juventus.jpg",
+        "width": null,
+        "height": null
+    }
+}</script><script type="application/ld+json">{
+    "@context": "http:\/\/schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "The Statesman",
+    "url": "https:\/\/www.thestatesman.com\/",
+    "slogan": "PEOPLE'S PARLIAMENT, ALWAYS IN SESSION",
+    "legalName": "The Statesman Net Private Limited",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/www.thestatesman.com\/wp-content\/themes\/statesmantheme\/images\/the-statesman-logo-new.png",
+        "width": "280",
+        "height": "64"
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Statesman House, First Floor 148 Barakhamba Road",
+        "addressLocality": "New Delhi",
+        "addressRegion": "India",
+        "postalCode": "110001"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-011-41605781",
+        "areaServed": "IN",
+        "availableLanguage": "English"
+    }
+}</script><script type="application/ld+json">{
+    "@context": "http:\/\/schema.org",
+    "@type": "SiteNavigationElement",
+    "name": [
+        "Home",
+        "India",
+        "World",
+        "Business",
+        "Sports",
+        "Entertainment",
+        "Opinion",
+        "Law",
+        "Lifestyle",
+        "Technology",
+        "Cities"
+    ],
+    "url": [
+        "https:\/\/www.thestatesman.com\/",
+        "https:\/\/www.thestatesman.com\/india",
+        "https:\/\/www.thestatesman.com\/world",
+        "https:\/\/www.thestatesman.com\/business",
+        "https:\/\/www.thestatesman.com\/sports",
+        "https:\/\/www.thestatesman.com\/entertainment",
+        "https:\/\/www.thestatesman.com\/opinion",
+        "https:\/\/www.thestatesman.com\/law",
+        "https:\/\/www.thestatesman.com\/lifestyle",
+        "https:\/\/www.thestatesman.com\/technology",
+        "https:\/\/www.thestatesman.com\/cities"
+    ]
+}</script><script type="application/ld+json">{
+    "@context": "http:\/\/schema.org",
+    "@type": "WebSite",
+    "name": "I&#8217;m staying at Real Madrid, says Cristiano Ronaldo",
+    "description": "&lt;p&gt;&lt;em&gt;Ronaldo said he is staying put at Real Madrid to plunder more silverware.&lt;\/em&gt;&lt;\/p&gt;\r\n",
+    "publisher": {
+        "@type": "Organization",
+        "name": "thestatesman.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/www.thestatesman.com\/wp-content\/themes\/statesmantheme\/images\/the-statesman-logo-new.png",
+            "width": "280",
+            "height": "64"
+        }
+    }
+}</script><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<style>	
+	.main-menu > li { padding: 0 16px; }
+
+		.logo-text #Date {
+			text-align: left;
+			margin: 10px 0 0 0;
+		}
+
+		@media (max-width: 767px){
+		.logo-text #Date {width: 100%;text-align: center;}
+		.main-header.header-style-2 h1.logo.d-inline {width: 200px;display: inline-block!important;max-width: 200px;}
+		header.sticky-bar {position: fixed;}
+		header.header-sticky .mobile_menu{position: absolute; left: 0px;}
+		.main-header.header-style-2 .header-tools{top: 29px;}
+		.main-header.header-style-2.sticky-bar {padding: 0px 0;}
+		.main-header.header-style-2 .container.pt-30.pb-30 {padding-top: 0px!important;padding-bottom: 0px!important;}
+		
+		.off-canvas-toggle-cover{    display: none!important;}
+		
+		}
+		
+		.position-absolute-center {top: 39%;}
+.logo-text #Date{margin: -22px 0 0 0;}
+
+@media (max-width: 767px){
+.logo-text #Date {
+    width: 100%;
+    text-align: center;
+    margin: 0px 0 0 0;
+}    
+}
+
+
+/* css changes on 16th July */
+
+.sub-footer-menu {
+  display: inline;
+}
+.subfooter-menu li::before {
+  content: "l";
+  color: #6c757d !important;
+}
+.subfooter-menu li:first-child::before {
+  content: "";
+}
+
+.subfooter-menu li a {
+color: #6c757d !important;
+margin-right: 7px;
+margin-left: 7px;
+font-size: 13px;
+}
+.subfooter-menu li {
+  display: inline;
+}
+
+.sub-footer-menu {
+  display: inline;
+  width: 50%;
+  margin-left: 70px;
+  float: right;
+}
+
+.footer-bottom-area .footer-copy-right p {
+	display: inline;
+    float: left;
+}
+@media (max-width: 767px){
+.footer-bottom-area .footer-copy-right p {
+        width: 100%;
+}
+.sub-footer-menu{    width: 100%;    padding-bottom: 15px;}
+#scrollUp{    right: 6px;
+    bottom: 5px;}
+}
+
+.static-content-inner {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+}
+
+	@media (max-width: 767px){
+		.static-content-inner {
+			width: 100%;
+		}
+	}
+	
+	.single-content .entry-header.mb-30.mt-50 {
+	  margin-top: 0px !important;
+	}
+	.single-content .image.mb-30.m-auto.text-center.border-radius-2 {
+	  margin-bottom: 0px !important;
+	}
+	
+	
+.main-header .main-nav ul li.menu-item-has-children > span::before {
+    content: "\e64b";
+    font-family: 'themify';
+    font-size: 8px;
+    display: inline-block;
+    padding-left: 5px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.main-header .main-nav ul li > span::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: -1px;
+    opacity: 0.5;
+    transform: translateX(-50%);
+}
+.main-header.header-style-2 .main-nav ul li>span {
+    position: relative;
+    padding: 0;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+        padding-right: 15px;
+}
+	</style>
+
+<!-- Begin comScore Tag -->
+    <script type="rocketlazyloadscript">
+        var _comscore = _comscore || [];
+        _comscore.push({c1: "2", c2: "22167523"});
+        (function () {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+            s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+        })();
+    </script>
+    
+    <noscript>
+        <img src="https://b.scorecardresearch.com/p?c1=2&c2=22167523&cv=2.0&cj=1"/>
+    </noscript>
+<!-- End comScore Tag -->
+
+    <script type="rocketlazyloadscript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-62317116-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+	window._taboola = window._taboola || [];
+	_taboola.push({article:'auto'});
+	!function (e, f, u, i) {
+	if (!document.getElementById(i)){
+	  e.async = 1;
+	  e.src = u;
+	  e.id = i;
+	  f.parentNode.insertBefore(e, f);
+	}
+	}(document.createElement('script'),
+	document.getElementsByTagName('script')[0],
+	'//cdn.taboola.com/libtrc/thestatesman/loader.js',
+	'tb_loader_script');
+	if(window.performance && typeof window.performance.mark == 'function')
+	{window.performance.mark('tbl_ic');}
+	</script>	
+<script type="rocketlazyloadscript"> window._izq = window._izq || []; window._izq.push(["init" ]); </script>
+<script data-minify="1" src="https://www.thestatesman.com/wp-content/cache/min/1/scripts/388c06105ddd1f8b5fdb716ed30c86a236e977d6.js?ver=1717466750" defer></script>
+</head>
+
+<body>
+    <div class="scroll-progress bg-dark"></div>
+    
+    <!--Offcanvas sidebar-->
+    <aside id="sidebar-wrapper" class="custom-scrollbar offcanvas-sidebar position-left">
+        <button class="off-canvas-close"><i class="ti-close"></i></button>
+        <div class="sidebar-inner">
+            
+            <!--Categories-->
+            <div class="sidebar-widget widget_categories mb-50">
+                <div class="widget-header position-relative mb-20">
+                    <h5 class="widget-title mt-5">All Sections</h5>
+                </div>
+                <div class="widget_nav_menu">
+                    <ul class="menu">
+                         <li class="">
+                            <a href="/">Home</a>
+                        </li>
+                       
+                         <li><a href="/india">India</a></li>
+                        <li><a href="/world">World</a></li>
+                        <li><a href="/business">Business</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/entertainment">Entertainment</a></li>
+                        <li><a href="/opinion">Opinion</a></li>
+                        <li><a href="/law">Law</a></li>
+                        <li><a href="/lifestyle">Lifestyle</a></li>
+                        <li><a href="https://www.dainikstatesmannews.com/">Dainik Statesman</a></li>
+                        <li class="menu-item-has-children"><span> More </span>
+							<ul class="sub-menu text-muted font-small">
+								 <li><a href="/technology" target="_blank">Technology</a></li>
+								 <li><a href="/exclusive-interviews" target="_blank">Exclusive Interviews</a></li>
+								 <li><a href="/features" target="_blank">    Features</a></li>
+								 <li><a href="/photo" target="_blank">    Photo</a></li>
+								 <li><a href="/videogallery" target="_blank">    Videos</a></li>
+								 <li><a href="/cities" target="_blank">    Cities</a></li>
+								 <li><a href="/travel" target="_blank">    Travel</a></li>
+								 <li><a href="/education" target="_blank">    Education</a> </li>
+								 <li><a href="/supplements/law" target="_blank">    Law</a></li>
+                            </ul>
+						</li>
+						
+						<li class="menu-item-has-children">
+							<!--<a href="https://epaper.thestatesman.com/">Epaper</a>-->
+							<span onclick="window.location.href='https://epaper.thestatesman.com/'">Epaper</span>
+							<ul class="sub-menu text-muted font-small">
+								 <li><a href="https://epaper.thestatesman.com/t/31575/?s=%20Bhubaneswar%20-The%20Statesman" target="_blank">Bhubaneswar</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9207/?s=Delhi%20-%20The%20Statesman" target="_blank">Delhi</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9247/?s=Kolkata%20-%20The%20Statesman" target="_blank"> Kolkata</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9248/?s=Siliguri%20-%20The%20Statesman" target="_blank"> Siliguri</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9256/?s=Dainik-Statesman" target="_blank"> Dainik Statesman</a></li>
+                            </ul>
+						</li>
+                    </ul>
+                </div>
+            </div>
+            <!--Ads-->
+          <!--  <div class="sidebar-widget widget-ads mb-30">
+                <a href="assets/imgs/news-1.jpg" class="play-video" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://via.placeholder.com/432x336"><noscript><img src="http://via.placeholder.com/432x336" alt=""></noscript>
+                </a>
+            </div> -->
+        </div>
+    </aside>
+    <!-- Start Header -->
+    <header class="main-header header-style-2 header-sticky">
+        <div class="container pt-30 pb-30 position-relative text-center header-top">
+            <div class="mobile_menu d-lg-none d-block"></div>
+            <!--Header tools-->
+            <div class="header-tools position-absolute position-absolute-center">
+                <ul class="header-social-network d-inline-block list-inline mr-10">
+                    <li class="list-inline-item"><a class="social-icon facebook-icon text-xs-center color-grey" target="_blank" href="https://www.facebook.com/thestatesman1875/?fref=ts"><i class="ti-facebook"></i></a></li>
+                    <li class="list-inline-item"><a class="social-icon twitter-icon text-xs-center color-grey" target="_blank" href="https://twitter.com/TheStatesmanLtd"><i class="ti-twitter"></i></a></li>
+					<li class="list-inline-item"><a class="social-icon youtube-icon text-xs-center color-grey" target="_blank" href="https://www.youtube.com/@TheStatesmanofficial"><i class="ti-youtube"></i></a></li>
+                </ul>
+                <button type="submit" class="search search-icon search-btn mr-15">
+                    <i class="ti-close"></i>
+                    <i class="ti-search"></i>
+                </button>
+               <!-- <div class="off-canvas-toggle-cover d-inline-block">
+                    <div class="off-canvas-toggle hidden d-inline-block" id="off-canvas-toggle">
+                        <span></span>
+                        <p class="font-small d-none d-lg-inline font-weight-bold offcanvas-more-text">MORE</p>
+                    </div>
+                </div> -->
+            </div>
+            <!--Header logo-->
+            <div class="logo-text">
+                <h1 class="logo text-uppercase d-md-inline d-none"><a href="/"><img alt="Logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/the-statesman-logo-new.png" /><noscript><img alt="Logo" src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/the-statesman-logo-new.png" /></noscript></a></h1>
+                <h1 class="logo logo-mobile text-uppercase d-inline d-md-none"><a href="/"><img alt="Logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2046'%3E%3C/svg%3E" width="200" height="46" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/the-statesman-logo-new.png" /><noscript><img alt="Logo" src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/the-statesman-logo-new.png" width="200" height="46" /></noscript></a></h1>
+				<div id="Date"></div>
+                <p class="head-line font-heading text-muted d-none d-lg-block"><div id="Date"></div></p>
+            </div>
+             
+        </div>
+        <div class="main-navigation text-center text-uppercase font-heading">
+            <div class="container">
+                <div class="horizontal-divider-black"></div>
+            </div>
+            <div class="main-nav d-none d-lg-block">
+                <nav>
+                    <!--Desktop menu-->
+                    <ul class="main-menu d-none d-lg-inline">
+                        <li class="">
+                            <a href="/">Home</a>
+                        </li>
+                       
+                         <li><a href="/india">India</a></li>
+                        <li><a href="/world">World</a></li>
+                        <li><a href="/business">Business</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/entertainment">Entertainment</a></li>
+                        <li><a href="/opinion">Opinion</a></li>
+                        <li><a href="/law">Law</a></li>
+                        <li><a href="/lifestyle">Lifestyle</a></li>
+                        <li><a href="https://www.dainikstatesmannews.com/">Dainik Statesman</a></li>
+                        <li class="menu-item-has-children"><span> More </span>
+							<ul class="sub-menu text-muted font-small">
+								 <li><a href="/technology" target="_blank">Technology</a></li>
+								 <li><a href="/exclusive-interviews" target="_blank">Exclusive Interviews</a></li>
+								 <li><a href="/features" target="_blank">    Features</a></li>
+								 <li><a href="/photo" target="_blank">    Photo</a></li>
+								 <li><a href="/videogallery" target="_blank">    Videos</a></li>
+								 <li><a href="/cities" target="_blank">    Cities</a></li>
+								 <li><a href="/travel" target="_blank">    Travel</a></li>
+								 <li><a href="/education" target="_blank">    Education</a> </li>
+								 <li><a href="/supplements/law" target="_blank">    Law</a></li>
+                            </ul>
+						</li>
+                        <li class="menu-item-has-children"><a href="https://epaper.thestatesman.com/"> Epaper </a>
+							<ul class="sub-menu text-muted font-small">
+								 <li><a href="https://epaper.thestatesman.com/t/31575/?s=%20Bhubaneswar%20-The%20Statesman" target="_blank">Bhubaneswar</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9207/?s=Delhi%20-%20The%20Statesman" target="_blank">Delhi</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9247/?s=Kolkata%20-%20The%20Statesman" target="_blank"> Kolkata</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9248/?s=Siliguri%20-%20The%20Statesman" target="_blank"> Siliguri</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9256/?s=Dainik-Statesman" target="_blank"> Dainik Statesman</a></li>
+                            </ul>
+						</li>
+                        
+                    </ul>
+                    <!--Mobile menu-->
+                    <ul id="mobile-menu" class="d-block d-lg-none">
+                       <li class="">
+                            <a href="/">Home</a>
+                        </li>
+                       
+                         <li><a href="/india">India</a></li>
+                        <li><a href="/world">World</a></li>
+                        <li><a href="/business">Business</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/entertainment">Entertainment</a></li>
+                        <li><a href="/opinion">Opinion</a></li>
+                        <li><a href="/law">Law</a></li>
+                        <li><a href="/lifestyle">Lifestyle</a></li>
+                        <li><a href="https://www.dainikstatesmannews.com/">Dainik Statesman</a></li>
+                        <li class="menu-item-has-children"><span> More </span>
+							<ul class="sub-menu text-muted font-small">
+								 <li><a href="/technology" target="_blank">Technology</a></li>
+								 <li><a href="/exclusive-interviews" target="_blank">Exclusive Interviews</a></li>
+								 <li><a href="/features" target="_blank">    Features</a></li>
+								 <li><a href="/photo" target="_blank">    Photo</a></li>
+								 <li><a href="/videogallery" target="_blank">    Videos</a></li>
+								 <li><a href="/cities" target="_blank">    Cities</a></li>
+								 <li><a href="/travel" target="_blank">    Travel</a></li>
+								 <li><a href="/education" target="_blank">    Education</a> </li>
+								 <li><a href="/supplements/law" target="_blank">    Law</a></li>
+                            </ul>
+						</li>
+                        <li class="menu-item-has-children"><a href="https://epaper.thestatesman.com/"> Epaper </a>
+							<ul class="sub-menu text-muted font-small">
+								 <li><a href="https://epaper.thestatesman.com/t/31575/?s=%20Bhubaneswar%20-The%20Statesman" target="_blank">Bhubaneswar</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9207/?s=Delhi%20-%20The%20Statesman" target="_blank">Delhi</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9247/?s=Kolkata%20-%20The%20Statesman" target="_blank"> Kolkata</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9248/?s=Siliguri%20-%20The%20Statesman" target="_blank"> Siliguri</a></li>
+								 <li><a href="https://epaper.thestatesman.com/t/9256/?s=Dainik-Statesman" target="_blank"> Dainik Statesman</a></li>
+                            </ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="container">
+                <div class="horizontal-divider-black mb-1px"></div>
+            </div>
+            <div class="container">
+                <div class="horizontal-divider-black"></div>
+            </div>
+        </div>
+    </header>
+    <!--Start search form-->
+    <div class="main-search-form">
+        <div class="container">
+            <div class="main-search-form-cover pt-50 pb-50 m-auto">
+                <div class="row mb-20">
+                    <div class="col-12">
+                        <form action="#" class="search-header">
+                            <div class="input-group w-100">
+                                <!--<select class="form-control first_null not_chosen">
+                                    <option value="">Search all</option>
+                                    <option value="AX">Articles</option>
+                                    <option value="AF">Authors</option>
+                                    <option value="AF">Tags</option>
+                                </select> -->
+                                <input type="text" class="form-control" id="s" name="s" placeholder="Type your key words and hit enter">
+                                <div class="input-group-append">
+                                    <button class="btn btn-black" type="submit">
+                                        <i class="ti-search mr-5"></i> Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+               <!-- <div class="row">
+                    <div class="col-12 font-small suggested-area">
+                        <p class="suggested font-heading mb-10"><strong>Suggestion</strong></p>
+                        <ul class="list-inline d-inline-block">
+                            <li class="list-inline-item"><a href="/?s=india news">India News</a></li>
+                            <li class="list-inline-item"><a href="/opinion">World News</a></li>
+                            <li class="list-inline-item"><a href="/opinion">Opinion</a></li>
+                            <li class="list-inline-item"><a href="/opinion">Tech</a></li>
+                            <li class="list-inline-item"><a href="/opinion">Science</a></li>
+                            <li class="list-inline-item"><a href="/opinion">Books</a></li>
+                            <li class="list-inline-item"><a href="/opinion">Travel</a></li>
+                            <li class="list-inline-item"><a href="/opinion">Business</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+<style>
+.adspace {  display:block; margin:auto !important; text-align: center; margin: 10px 0 10px 0;  }
+.mobilead { display:none; }
+.deskad { display:block; margin:auto; text-align: center; margin: 10px 0 10px 0; }
+@media only screen and (max-width: 600px) {
+.mobilead { display:block; margin:auto; text-align: center; margin: 10px 0 10px 0; }
+.deskad { display:none; }
+}
+
+</style>
+
+<div class="mobilead">
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2069566251651680"
+     crossorigin="anonymous"></script>
+<!-- BELOW LOGO STORY PAGE -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:90px"
+     data-ad-client="ca-pub-2069566251651680"
+     data-ad-slot="4640732409"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<div class="deskad">
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2069566251651680"
+     crossorigin="anonymous"></script>
+<!-- Header Desktop -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2069566251651680"
+     data-ad-slot="1588745384"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<style>
+   .tags li { display: inline; }
+</style>
+    <!-- Start Main content -->
+    <main class="mt-30">
+        <div class="container single-content">
+            <div class="row vertical-divider mb-50">
+                <div class="col-lg-9 col-md-12">
+                    <div class="entry-header mb-30 mt-50">
+					
+					                        <div class="entry-meta meta-0 mb-15 font-small">
+                            <a href="#"><span class="post-cat position-relative"># Sports</span></a>
+                        </div>
+                        <h1 class="entry-title mb-30 font-weight-500">
+                            I&#8217;m staying at Real Madrid, says Cristiano Ronaldo                        </h1>
+						<h2 style="font-size:20px;">
+                            <p><em>Ronaldo said he is staying put at Real Madrid to plunder more silverware.</em></p>
+						</h2>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="entry-meta align-items-center meta-2 font-small color-muted">
+                                    <p class="mb-5">
+                                   AFP | Madrid | <span class="post-date">July 25, 2017 3:19 pm</span>                                    </p>
+                                   <!-- <span class="mr-10"> 15 April 2020</span>
+                                    <span class="has-dot"> 8 mins read</span> -->
+                                </div>
+                            </div>
+                             
+                        </div>
+                    </div>
+					
+					
+
+<div class="socialshare">
+
+
+<div class="story__social">
+    <ul class="story__social-ul ">
+                <li class="story__social-li clsforsocialtracking">
+                  <a title="Share on WhatsApp" data-platform="whatsapp" target="_blank" class="story_social-link" href="https://api.whatsapp.com/send?text=I&#8217;m staying at Real Madrid, says Cristiano Ronaldo %0A%0A https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html"> 
+                  <img alt="Share on WhatsApp" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%200'%3E%3C/svg%3E" width="41" height="40" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/whatsapp.png"><noscript><img alt="Share on WhatsApp" src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/whatsapp.png" width="41" height="40"></noscript>
+            </a> </li>
+        
+        <li class="story__social-li"> <a title="Share on Facebook" data-platform="facebook" data-position="middle" data-page="story" class="story_social-link clsforsocialtracking" target="_blank"  href="https://www.facebook.com/sharer.php?u=https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html"> 
+                <img alt="Share on Facebook" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%200'%3E%3C/svg%3E" width="41" height="40" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/facebookus.png"><noscript><img alt="Share on Facebook" src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/facebookus.png" width="41" height="40"></noscript>
+            </a> </li>
+
+        <li class="story__social-li"> <a title="Share on Twitter" data-platform="twitter" data-page="story" data-position="middle" class="story_social-link clsforsocialtracking" target="_blank" href="https://twitter.com/intent/tweet?text=I&#8217;m staying at Real Madrid, says Cristiano Ronaldo&amp;url=https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html">  
+            <img alt="Share on Twitter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%200'%3E%3C/svg%3E" width="41" height="40" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/tweet.png"><noscript><img alt="Share on Twitter" src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/tweet.png" width="41" height="40"></noscript>
+
+            </a> 
+        </li>
+       
+	   <li class="story__social-li"> <a title="Share on Telegram" data-platform="Telegram" data-page="story" data-position="middle" class="story_social-link clsforsocialtracking" target="_blank" href="https://telegram.me/share/url?text=I&#8217;m staying at Real Madrid, says Cristiano Ronaldo&amp;url=https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html">  
+            <img alt="Share on Telegram" style="height:38px;" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%200'%3E%3C/svg%3E" width="41" height="40" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/telegram.png"><noscript><img alt="Share on Telegram" style="height:38px;" src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/telegram.png" width="41" height="40"></noscript>
+
+            </a> 
+        </li>
+
+	   <li class="story__social-li"> <a title="Share on Linkedin" data-platform="Linkedin" data-page="story" data-position="middle" class="story_social-link clsforsocialtracking" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&title=I&#8217;m staying at Real Madrid, says Cristiano Ronaldo&amp;url=https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html">  
+            <img alt="Share on Linkedin" style="height:38px;" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%200'%3E%3C/svg%3E" width="41" height="40" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/linkedin.png"><noscript><img alt="Share on Linkedin" style="height:38px;" src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/linkedin.png" width="41" height="40"></noscript>
+
+            </a> 
+        </li> 
+                   
+
+            
+
+
+            
+
+         
+         
+    </ul>
+</div>                   
+</div>
+
+
+<style type="text/css">
+.story__social {
+    display: block;
+    font-size: 0;
+}
+.story__social-ul {
+    display: inline-block;
+    margin: 5px auto 15px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+.story__social-li {
+    display: inline-block;
+    float: left;
+    height: 30px;
+    margin-right: 1%;
+        width: auto;}
+.story_social-link, a.story_social-link {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    color: #fff;
+    line-height: 29px;
+        height: 35px;
+}
+.story__social-li img {
+    height: 40px;
+}  	
+</style>
+
+
+
+</div>					
+					
+                    <!--  <figure class="image mb-30 m-auto text-center border-radius-2">
+                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="post-title" data-lazy-src="http://via.placeholder.com/1332x497"><noscript><img src="http://via.placeholder.com/1332x497" alt="post-title"></noscript>
+                    </figure> -->
+					
+					                    <figure class="image mb-30 m-auto text-center border-radius-2">
+                        															<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201240%20826'%3E%3C/svg%3E" alt="I&#8217;m staying at Real Madrid, says Cristiano Ronaldo" width="1240" height="826" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2017/08/1496915873-cristiano-ronaldo-uefa-champions-league-final-real-madrid-vs-juventus.jpg" /><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2017/08/1496915873-cristiano-ronaldo-uefa-champions-league-final-real-madrid-vs-juventus.jpg" alt="I&#8217;m staying at Real Madrid, says Cristiano Ronaldo" width="1240" height="826" /></noscript>													                                <div class="caption-img"><p> Cristiano Ronaldo (Photo: AFP) </p></div>
+                        						                    </figure>
+										
+					
+					<span class="adspace">
+						<script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2069566251651680"
+     crossorigin="anonymous"></script>
+<!-- BELOW LOGO STORY PAGE -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:90px"
+     data-ad-client="ca-pub-2069566251651680"
+     data-ad-slot="4640732409"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+					</span>
+					
+                    <article class="entry-wraper mb-50">
+                        <div class="entry-main-content dropcap wow fadeIn animated">
+                            <p>Ending weeks of speculation about his future, Cristiano Ronaldo has told a Spanish newspaper he is staying put at Real Madrid to plunder more silverware.</p>
+<p>&ldquo;To win important trophies with my club and the personal honours last season was brilliant, to do it again would be nice,&rdquo; Ronaldo told the sports daily Marca on Tuesday in an interview from Shanghai.</p>
+<p>Ronaldo&#039;s declaration of intent to remain at the Bernabeu for the upcoming season comes despite rumours of his departure which surfaced last month in Portuguese newspaper O Globo.</p><div style="margin: 15px 0 15px 0;">
+   <p></p>		
+  <p style="margin-bottom:1px; text-align:center;">Advertisement </p>			
+  <script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2069566251651680"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2069566251651680"
+     data-ad-slot="2326556149"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> </div>
+<p>Those reports were founded on his apparent feeling of abandonment by his club over his run-in with the Spanish tax authorities.</p>
+<p>Ronaldo, 32, has been summoned to appear before a&nbsp;judge near Madrid on July 31 to answer four counts of evading 14.7 million euros ($16.8 million) in taxes.</p>
+<p>The four-time Ballon d&#039;Or winner has protested his innocence with O Globo saying he had threatened to leave Real over the investigation.</p>
+<p>Since extending his contract last November until 2021, Ronaldo is the highest paid sports star in the world with $93 million (83m euro) in 2016-2017, according to Forbes magazine.</p>
+<p>On Saturday Real manager Zinedine Zidane assured Real supporters that the superstar striker &ldquo;was on holiday and would be back with us on (August) 5&rdquo;.</p>
+<p>Ronaldo has been given leave to miss the club&#039;s pre- season US tour and Zidane, speaking in Los Angeles, insisted that he would be back at the club &ldquo;on the fifth (of August) and I think he&#039;ll stay for the next two or three years he&#039;s got left with us.&rdquo;</p>
+<p>In Tuesday&#039;s Marca interview Ronaldo also looked ahead to the 2018 World Cup with European champions Portugal.<br />
+&ldquo;We still have to qualify but I&#039;m hoping that Portugal can win an incredible title.&rdquo;</p>
+<div style="margin: 15px 0 15px 0;">
+   <p></p>		
+  <p style="margin-bottom:1px; text-align:center;">Advertisement </p>			
+  <script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2069566251651680"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2069566251651680"
+     data-ad-slot="2326556149"></ins>
+<script type="rocketlazyloadscript">
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> </div> 
+							
+                        
+						
+						</div>
+                        <div class="entry-bottom mt-50 mb-30 wow fadeIn animated">
+                            <div class="tags">
+                               <ul><li><a href="https://www.thestatesman.com/tag/cristiano-ronaldo" rel="tag">Cristiano Ronaldo</a></li><li><a href="https://www.thestatesman.com/tag/real-madrid" rel="tag">Real Madrid</a></li><li><a href="https://www.thestatesman.com/tag/zinedine-zidane" rel="tag">Zinedine Zidane</a></li></ul>							   
+                            </div>
+                        </div>
+                        <div class="single-social-share clearfix wow fadeIn animated">
+                         
+                          
+
+
+<div class="socialshare">
+
+
+<div class="story__social">
+    <ul class="story__social-ul ">
+                <li class="story__social-li clsforsocialtracking">
+                  <a title="Share on WhatsApp" data-platform="whatsapp" target="_blank" class="story_social-link" href="https://api.whatsapp.com/send?text=I&#8217;m staying at Real Madrid, says Cristiano Ronaldo %0A%0A https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html"> 
+                  <img alt="Share on WhatsApp" style="background:white;" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%200'%3E%3C/svg%3E" width="41" height="40" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/whatsapp.png"><noscript><img alt="Share on WhatsApp" style="background:white;" src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/whatsapp.png" width="41" height="40"></noscript>
+            </a> </li>
+        
+        <li class="story__social-li"> <a title="Share on Facebook" data-platform="facebook" data-position="middle" data-page="story" class="story_social-link clsforsocialtracking" target="_blank"  href="https://www.facebook.com/sharer.php?u=https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html"> 
+                <img alt="Share on Facebook" style="background:white;"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%200'%3E%3C/svg%3E" width="41" height="40" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/facebookus.png"><noscript><img alt="Share on Facebook" style="background:white;"  src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/facebookus.png" width="41" height="40"></noscript>
+            </a> </li>
+
+        <li class="story__social-li"> <a title="Share on Twitter" data-platform="twitter" data-page="story" data-position="middle" class="story_social-link clsforsocialtracking" target="_blank" href="https://twitter.com/intent/tweet?text=I&#8217;m staying at Real Madrid, says Cristiano Ronaldo&amp;url=https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html">  
+            <img alt="Share on Twitter" style="background:white;"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%200'%3E%3C/svg%3E" width="41" height="40" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/tweet.png"><noscript><img alt="Share on Twitter" style="background:white;"  src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/tweet.png" width="41" height="40"></noscript>
+
+            </a> 
+        </li>
+		
+		<li class="story__social-li"> <a title="Share on Telegram" data-platform="Telegram" data-page="story" data-position="middle" class="story_social-link clsforsocialtracking" target="_blank" href="https://telegram.me/share/url?text=I&#8217;m staying at Real Madrid, says Cristiano Ronaldo&amp;url=https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html">  
+            <img alt="Share on Telegram" style="height:38px;" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2041%200'%3E%3C/svg%3E" width="41" height="40" data-lazy-src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/telegram.png"><noscript><img alt="Share on Telegram" style="height:38px;" src="https://www.thestatesman.com/wp-content/themes/statesmantheme/images/telegram.png" width="41" height="40"></noscript>
+
+            </a> 
+        </li>
+       
+         
+         
+    </ul>
+</div>                   
+</div>
+
+ 
+
+<!--						  <ul class="d-inline-block list-inline float-md-right mt-md-0 mt-4">
+                                <li class="list-inline-item"><a class="social-icon facebook-icon text-xs-center " target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html"><i class="ti-facebook"></i></a></li>
+                                <li class="list-inline-item"><a class="social-icon twitter-icon text-xs-center" target="_blank" href="http://twitter.com/share?text=I&#8217;m staying at Real Madrid, says Cristiano Ronaldo&url=https://www.thestatesman.com/sports/i-m-staying-at-real-madrid-says-cristiano-ronaldo-1500996138.html"><i class="ti-twitter-alt"></i></a></li>
+								
+                            </ul> -->
+                        </div>
+                        <div class="bt-1 border-color-1 mt-30 mb-30"></div>
+                        <!--author box-->
+                        
+                        <!--related posts-->
+                        <div class="related-posts">
+                            <h3 class="mb-30">Related posts</h3>
+                            <div class="loop-list">
+							<article class="row mb-30 wow fadeIn animated">
+                                    <div class="col-md-4">
+                                        <div class="post-thumb position-relative thumb-overlay mb-md-0 mb-3">
+                                            <div data-bg="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0637-300x200.png" class="img-hover-slide border-radius-5 position-relative rocket-lazyload" style="">
+                                                <a class="img-link" href="https://www.thestatesman.com/sports/football-three-valencia-fans-arrested-over-racial-abuse-on-vinicius-jr-1503308871.html"></a>
+                                                <span class="top-right-icon background8"><i class="mdi mdi-flash-on"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 align-center-vertical">
+                                        <div class="post-content">
+                                            <div class="entry-meta meta-0 font-small mb-15"><a href="/sports"><span class="post-cat background2 color-white"># Sports</span></a></div>
+                                            <h4 class="post-title mb-15">
+                                                <a href="https://www.thestatesman.com/sports/football-three-valencia-fans-arrested-over-racial-abuse-on-vinicius-jr-1503308871.html">Football: Three Valencia fans arrested over racial abuse on Vinicius Jr</a>
+                                            </h4>
+                                            <p class="font-medium excerpt">Real Madrid have announced that three fans have been arrested and also handed Stadium life bans after they got into an altercation with Vinicius Jr over racial abuse at the Mestalla stadium during the match between Valencia CF and Real Madrid CF.</p>
+                                        </div>
+                                    </div>
+                                </article><article class="row mb-30 wow fadeIn animated">
+                                    <div class="col-md-4">
+                                        <div class="post-thumb position-relative thumb-overlay mb-md-0 mb-3">
+                                            <div data-bg="https://www.thestatesman.com/wp-content/uploads/2024/06/Untitled-design-2024-06-10T154353.020-300x200.jpg" class="img-hover-slide border-radius-5 position-relative rocket-lazyload" style="">
+                                                <a class="img-link" href="https://www.thestatesman.com/sports/ancelotti-confirms-real-madrid-to-skip-club-world-cup-2025-1503308626.html"></a>
+                                                <span class="top-right-icon background8"><i class="mdi mdi-flash-on"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 align-center-vertical">
+                                        <div class="post-content">
+                                            <div class="entry-meta meta-0 font-small mb-15"><a href="/sports"><span class="post-cat background2 color-white"># Sports</span></a></div>
+                                            <h4 class="post-title mb-15">
+                                                <a href="https://www.thestatesman.com/sports/ancelotti-confirms-real-madrid-to-skip-club-world-cup-2025-1503308626.html">Ancelotti confirms Real Madrid to skip Club World Cup 2025</a>
+                                            </h4>
+                                            <p class="font-medium excerpt">The side is coming off their 15th Champions League victory, which earned them a chance to play in the next edition of the FIFA Club World Cup.</p>
+                                        </div>
+                                    </div>
+                                </article><article class="row mb-30 wow fadeIn animated">
+                                    <div class="col-md-4">
+                                        <div class="post-thumb position-relative thumb-overlay mb-md-0 mb-3">
+                                            <div data-bg="https://www.thestatesman.com/wp-content/uploads/2024/05/Untitled-design-2024-05-31T141028.969-300x200.jpg" class="img-hover-slide border-radius-5 position-relative rocket-lazyload" style="">
+                                                <a class="img-link" href="https://www.thestatesman.com/sports/uefa-champions-league-2023-24-underdogs-borussia-dortmund-face-real-madrid-in-finals-1503305541.html"></a>
+                                                <span class="top-right-icon background8"><i class="mdi mdi-flash-on"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 align-center-vertical">
+                                        <div class="post-content">
+                                            <div class="entry-meta meta-0 font-small mb-15"><a href="/sports"><span class="post-cat background2 color-white"># Sports</span></a></div>
+                                            <h4 class="post-title mb-15">
+                                                <a href="https://www.thestatesman.com/sports/uefa-champions-league-2023-24-underdogs-borussia-dortmund-face-real-madrid-in-finals-1503305541.html">UEFA Champions League 2023-24: Underdogs Borussia Dortmund face Real Madrid in finals</a>
+                                            </h4>
+                                            <p class="font-medium excerpt">This will be the 18th final appearance for Real Madrid in European Cup history.</p>
+                                        </div>
+                                    </div>
+                                </article>							
+                            </div>
+                        </div>
+                        <!--More posts-->
+                        <div class="single-more-articles" style="display:none;">
+                            <h6 class="widget-title mb-30 font-weight-bold text">You might be interested in</h6>
+                            <div class="post-block-list post-module-1 post-module-5">
+							
+							 <ul class="list-post">
+							 <li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/india/how-the-gulf-became-integral-part-of-indias-extended-neighbourhood-under-pm-modi-1503311879.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="How the Gulf became integral part of India&#8217;s &#8216;extended neighbourhood&#8217; under PM Modi" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0958-300x200.jpeg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0958-300x200.jpeg" alt="How the Gulf became integral part of India&#8217;s &#8216;extended neighbourhood&#8217; under PM Modi"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/india/how-the-gulf-became-integral-part-of-indias-extended-neighbourhood-under-pm-modi-1503311879.html">How the Gulf became integral part of India&#8217;s &#8216;extended neighbourhood&#8217; under PM Modi</a></h6>
+                                                     
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/india/tamil-nadu-death-toll-in-kallakurichi-hooch-tragedy-rises-to-29-aiadmk-demands-cm-stalins-resignation-1503311876.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Tamil Nadu: Death toll in Kallakurichi hooch tragedy rises to 29; AIADMK demands CM Stalin&#8217;s resignation" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0956-300x200.jpeg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0956-300x200.jpeg" alt="Tamil Nadu: Death toll in Kallakurichi hooch tragedy rises to 29; AIADMK demands CM Stalin&#8217;s resignation"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/india/tamil-nadu-death-toll-in-kallakurichi-hooch-tragedy-rises-to-29-aiadmk-demands-cm-stalins-resignation-1503311876.html">Tamil Nadu: Death toll in Kallakurichi hooch tragedy rises to 29; AIADMK demands CM Stalin&#8217;s resignation</a></h6>
+                                                     
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/india/pm-modi-to-inaugurate-lay-foundation-stone-of-multiple-development-projects-worth-over-rs-1500-cr-in-j-k-today-1503311873.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="PM Modi to inaugurate, lay foundation stone of multiple development projects worth over Rs 1500 cr in J-K today" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0897-300x200.jpeg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0897-300x200.jpeg" alt="PM Modi to inaugurate, lay foundation stone of multiple development projects worth over Rs 1500 cr in J-K today"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/india/pm-modi-to-inaugurate-lay-foundation-stone-of-multiple-development-projects-worth-over-rs-1500-cr-in-j-k-today-1503311873.html">PM Modi to inaugurate, lay foundation stone of multiple development projects worth over Rs 1500 cr in J-K today</a></h6>
+                                                     
+                                                </div>
+                                            </div>
+                                        </li></ul>                                     
+                                </ul>
+                            </div>
+                        </div>
+ 
+ 
+ <div class="taboola-ad">
+
+						<div id="taboola-below-article-thumbnails"></div>
+						<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+						window._taboola = window._taboola || [];
+						_taboola.push({
+						mode: 'thumbnails-c',
+						container: 'taboola-below-article-thumbnails',
+						placement: 'Below Article Thumbnails',
+						target_type: 'mix'
+						});
+						</script>
+
+						<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+						  window._taboola = window._taboola || [];
+						  _taboola.push({flush: true});
+						</script>
+					</div> 
+                         
+                    </article>
+					<div class="col-lg-3 col-md-12 primary-sidebar sticky-sidebar">
+				
+											<ul id="sidebar">
+								<div id="text-4" class="widget widget_text">			<div class="textwidget"><p style="margin-bottom: 1px; text-align: center;">Advertisement</p>
+<p><script type="rocketlazyloadscript" async data-rocket-src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><br />
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-2069566251651680" data-ad-slot="7903900254"></ins><br />
+<script type="rocketlazyloadscript">
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script></p>
+</div>
+		</div>
+			 
+			<div class="post-block-list post-module-1 post-module-5">
+			<h6 class="widget-header widget-header-style-4 mb-20 text-center text-uppercase border-top-1 border-bottom-1 pt-5 pb-5">
+                                    <span>Top Headlines</span>
+                                </h6>
+                                    <ul class="list-post">
+                                    <li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/india/how-the-gulf-became-integral-part-of-indias-extended-neighbourhood-under-pm-modi-1503311879.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="How the Gulf became integral part of India&#8217;s &#8216;extended neighbourhood&#8217; under PM Modi" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0958-300x200.jpeg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0958-300x200.jpeg" alt="How the Gulf became integral part of India&#8217;s &#8216;extended neighbourhood&#8217; under PM Modi"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/india/how-the-gulf-became-integral-part-of-indias-extended-neighbourhood-under-pm-modi-1503311879.html">How the Gulf became integral part of India&#8217;s &#8216;extended neighbourhood&#8217; under PM Modi</a></h6>
+                                                     
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/india/tamil-nadu-death-toll-in-kallakurichi-hooch-tragedy-rises-to-29-aiadmk-demands-cm-stalins-resignation-1503311876.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Tamil Nadu: Death toll in Kallakurichi hooch tragedy rises to 29; AIADMK demands CM Stalin&#8217;s resignation" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0956-300x200.jpeg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0956-300x200.jpeg" alt="Tamil Nadu: Death toll in Kallakurichi hooch tragedy rises to 29; AIADMK demands CM Stalin&#8217;s resignation"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/india/tamil-nadu-death-toll-in-kallakurichi-hooch-tragedy-rises-to-29-aiadmk-demands-cm-stalins-resignation-1503311876.html">Tamil Nadu: Death toll in Kallakurichi hooch tragedy rises to 29; AIADMK demands CM Stalin&#8217;s resignation</a></h6>
+                                                     
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/india/pm-modi-to-inaugurate-lay-foundation-stone-of-multiple-development-projects-worth-over-rs-1500-cr-in-j-k-today-1503311873.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="PM Modi to inaugurate, lay foundation stone of multiple development projects worth over Rs 1500 cr in J-K today" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0897-300x200.jpeg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0897-300x200.jpeg" alt="PM Modi to inaugurate, lay foundation stone of multiple development projects worth over Rs 1500 cr in J-K today"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/india/pm-modi-to-inaugurate-lay-foundation-stone-of-multiple-development-projects-worth-over-rs-1500-cr-in-j-k-today-1503311873.html">PM Modi to inaugurate, lay foundation stone of multiple development projects worth over Rs 1500 cr in J-K today</a></h6>
+                                                     
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/world/russian-president-vladimir-putin-arrives-in-vietnam-on-state-visit-1503311851.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Russian President Vladimir Putin arrives in Vietnam on state visit" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0945-300x200.jpeg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0945-300x200.jpeg" alt="Russian President Vladimir Putin arrives in Vietnam on state visit"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/world/russian-president-vladimir-putin-arrives-in-vietnam-on-state-visit-1503311851.html">Russian President Vladimir Putin arrives in Vietnam on state visit</a></h6>
+                                                     
+                                                </div>
+                                            </div>
+                                        </li></ul>
+                                </div><div class="sidebar-widget widget-latest-posts mb-30 mt-15 wow fadeIn animated">
+                                <h6 class="widget-header widget-header-style-4 mb-20 text-center text-uppercase border-top-1 border-bottom-1 pt-5 pb-5">
+                                    <span>OPINION</span>
+                                </h6>
+                                <div class="post-block-list post-module-1 post-module-5">
+                                    <ul class="list-post"><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/opinion/setting-pigeons-among-tech-cats-1503311855.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Setting pigeons among tech cats" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0947-300x200.jpeg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0947-300x200.jpeg" alt="Setting pigeons among tech cats"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/opinion/setting-pigeons-among-tech-cats-1503311855.html">Setting pigeons among tech cats</a></h6>
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/opinion/heat-traps-1503311856.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Heat Traps" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/05/IMG_9744-300x200.jpeg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/05/IMG_9744-300x200.jpeg" alt="Heat Traps"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/opinion/heat-traps-1503311856.html">Heat Traps</a></h6>
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/opinion/prudent-pause-1503311848.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Prudent Pause" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2021/05/QT-wtf-300x200.jpg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2021/05/QT-wtf-300x200.jpg" alt="Prudent Pause"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/opinion/prudent-pause-1503311848.html">Prudent Pause</a></h6>
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/opinion/geopolitical-imperative-1503311847.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Geopolitical imperative" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0943-300x200.png"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/06/IMG_0943-300x200.png" alt="Geopolitical imperative"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/opinion/geopolitical-imperative-1503311847.html">Geopolitical imperative</a></h6>
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/opinion/secularism-can-never-be-a-binary-concept-1503311466.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Secularism can never be a binary concept" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/04/voting-300x200.jpg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2024/04/voting-300x200.jpg" alt="Secularism can never be a binary concept"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/opinion/secularism-can-never-be-a-binary-concept-1503311466.html">Secularism can never be a binary concept</a></h6>
+                                                </div>
+                                            </div>
+                                        </li><li class="mb-15">
+                                            <div class="d-flex">
+                                                <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale">
+                                                    <a class="color-white" href="https://www.thestatesman.com/opinion/bridging-a-divide-1503311465.html">
+                                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Bridging a Divide" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2022/09/Indian-Economy-300x200.jpg"><noscript><img src="https://www.thestatesman.com/wp-content/uploads/2022/09/Indian-Economy-300x200.jpg" alt="Bridging a Divide"></noscript>
+                                                    </a>
+                                                </div>
+                                                <div class="post-content media-body">
+                                                    <h6 class="post-title mb-10 text-limit-2-row"><a href="https://www.thestatesman.com/opinion/bridging-a-divide-1503311465.html">Bridging a Divide</a></h6>
+                                                </div>
+                                            </div>
+                                        </li></ul>
+                                </div>
+                            </div><div id="block-2" class="widget widget_block widget_media_image">
+<figure class="wp-block-image size-full"><img decoding="async" width="300" height="250" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20250'%3E%3C/svg%3E" alt="" class="wp-image-1503303577" data-lazy-srcset="https://www.thestatesman.com/wp-content/uploads/2024/05/powergrid-Advertisemement.jpg 300w, https://www.thestatesman.com/wp-content/uploads/2024/05/powergrid-Advertisemement-150x125.jpg 150w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://www.thestatesman.com/wp-content/uploads/2024/05/powergrid-Advertisemement.jpg" /><noscript><img decoding="async" width="300" height="250" src="https://www.thestatesman.com/wp-content/uploads/2024/05/powergrid-Advertisemement.jpg" alt="" class="wp-image-1503303577" srcset="https://www.thestatesman.com/wp-content/uploads/2024/05/powergrid-Advertisemement.jpg 300w, https://www.thestatesman.com/wp-content/uploads/2024/05/powergrid-Advertisemement-150x125.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></figure>
+</div>							</ul>
+						                     
+                </div>
+                </div>
+                
+            </div>
+            <!--end single header-->
+        </div>
+        <!--container-->
+    </main>
+    <!-- End Main content -->
+
+    <!-- Footer Start-->
+    <footer>
+        <div class="footer-area">
+            <div class="container">
+                <div class="row pb-30">
+                    <div class="col-12">
+                        <div class="divider-2 mb-30"></div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-lg-0 mb-md-4 mb-sm-4">
+                        <div class="sidebar-widget widget-latest-posts pr-50">
+                            <h4 class="widget-header text-uppercase font-weight-bold color-black">
+                                <span>thestatesman.com</span>
+                            </h4>
+                            <div class="textwidget">
+                                <p>
+                                    PEOPLE'S PARLIAMENT, ALWAYS IN SESSION
+
+                                </p>
+                                <p><strong class="color-black">Address</strong><br>
+                                    The Statesman Net Private Limited<br>
+                                    Statesman House, First Floor 148 Barakhamba Road<br>
+New Delhi – 110001<br>
+(+91) (011) 41605781, 41605958
+</p>
+                                <br>
+                                    </p>
+                                <ul class="header-social-network d-inline-block list-inline font-small">
+                                    <li class="list-inline-item"><span class="text-uppercase "><strong class="color-black">Follow us:</strong></span></li>
+                                    <li class="list-inline-item"><a class="social-icon facebook-icon text-xs-center" target="_blank" href="https://www.facebook.com/thestatesman1875/?fref=ts"><i class="ti-facebook"></i></a></li>
+                                    <li class="list-inline-item"><a class="social-icon twitter-icon text-xs-center" target="_blank" href="https://twitter.com/TheStatesmanLtd"><i class="ti-twitter-alt"></i></a></li>
+									<li class="list-inline-item"><a class="social-icon youtube-icon text-xs-center" target="_blank" href="https://www.youtube.com/@TheStatesmanofficial"><i class="ti-youtube"></i></a></li>
+                                   <!-- <li class="list-inline-item"><a class="social-icon pinterest-icon text-xs-center" target="_blank" href="#"><i class="ti-pinterest"></i></a></li>
+                                    <li class="list-inline-item"><a class="social-icon instagram-icon text-xs-center" target="_blank" href="#"><i class="ti-instagram"></i></a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- <div class="col-lg-3 col-md-6 mb-lg-0 mb-md-4 mb-sm-4">
+                        <h5 class="mb-20">Trending Topics</h5>
+                        <ul class="list-post">
+                            <li class="mb-15">
+                                <div class="d-flex">
+                                    <div class="post-thumb post-thumb-50 d-flex mr-15 border-radius-5 img-hover-scale">
+                                        <a class="color-white" href="author.php">
+                                            <img class="img-circle" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://via.placeholder.com/133x133"><noscript><img class="img-circle" src="http://via.placeholder.com/133x133" alt=""></noscript>
+                                        </a>
+                                    </div>
+                                    <div class="post-content media-body">
+                                        <h6 class="post-title mb-0 font-weight-bold color-black"><a href="/?s=agniveer">Agni Veer</a></h6>
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-15 mt-5">
+                                <div class="d-flex">
+                                    <div class="post-thumb post-thumb-50 d-flex mr-15 border-radius-5 img-hover-scale">
+                                        <a class="color-white" href="author.php">
+                                            <img class="img-circle" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://via.placeholder.com/133x133"><noscript><img class="img-circle" src="http://via.placeholder.com/133x133" alt=""></noscript>
+                                        </a>
+                                    </div>
+                                    <div class="post-content media-body">
+                                        <h6 class="post-title mb-0 font-weight-bold color-black"><a href="/?s=bollywood">Bollywood</a></h6>
+                                         
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-15 mt-5">
+                                <div class="d-flex">
+                                    <div class="post-thumb post-thumb-50 d-flex mr-15 border-radius-5 img-hover-scale">
+                                        <a class="color-white" href="author.php">
+                                            <img class="img-circle" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="http://via.placeholder.com/133x133"><noscript><img class="img-circle" src="http://via.placeholder.com/133x133" alt=""></noscript>
+                                        </a>
+                                    </div>
+                                    <div class="post-content media-body">
+                                        <h6 class="post-title mb-0 font-weight-bold color-black"><a href="/?s=elections">Elections</a></h6>
+                                         
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <div class="col">
+                        <h5 class="mb-15">News</h5>
+                        <ul class="float-left mr-30 font-small">
+                            <li class="cat-item cat-item-2"><a href="https://www.thestatesman.com/india">India </a></li>
+                            <li class="cat-item cat-item-3"><a href="https://www.thestatesman.com/world">World</a></li>
+                            <li class="cat-item cat-item-4"><a href="https://www.thestatesman.com/business">Business</a></li>
+                            <li class="cat-item cat-item-5"><a href="https://www.thestatesman.com/technology">Technology</a></li>
+                            <li class="cat-item cat-item-10"><a href="https://www.thestatesman.com/sports">Sports</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h5 class="mb-15">Lifestyle</h5>
+                        <ul class="float-left mr-30 font-small">
+                            <li class="cat-item cat-item-2"><a href="https://www.thestatesman.com/lifestyle/health">Health</a></li>
+                            <li class="cat-item cat-item-3"><a href="https://www.thestatesman.com/lifestyle">Lifestyle</a></li>
+                           
+                            <li class="cat-item cat-item-5"><a href="https://www.thestatesman.com/lifestyle/fashion">Fashion</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h5 class="mb-15">Entertainment</h5>
+                        <ul class="float-left mr-30 font-small">
+                            <li class="cat-item cat-item-2"><a href="https://www.thestatesman.com/entertainment">Entertainment</a></li>
+                            <li class="cat-item cat-item-3"><a href="https://www.thestatesman.com/entertainment/bollywood">Bollywood</a></li>
+                            <li class="cat-item cat-item-4"><a href="https://www.thestatesman.com/entertainment/hollywood">Hollywood</a></li>
+                            <li class="cat-item cat-item-5"><a href="https://www.thestatesman.com/entertainment/bengali_cinema">Bengali Cinema</a></li>
+                            <li class="cat-item cat-item-6"><a href="https://www.thestatesman.com/entertainment/southern_cinema">Southern Cinema</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer-bottom aera -->
+        <div class="footer-bottom-area text-center text-muted">
+            <div class="container">
+                <div class="footer-border pt-20 pb-20">
+                    <!--<div class="row d-flex mb-15">
+                        <div class="col-12">
+                            <ul class="list-inline font-small text-uppercase">
+                                <li class="list-inline-item"><a href="/opinion">India</a></li>
+                                <li class="list-inline-item"><a href="/opinion">World</a></li>
+                                <li class="list-inline-item"><a href="/opinion">West Bengal</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Business</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Opinion</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Tech</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Science</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Health</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Sports</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Arts</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Books</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Food</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Travel</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Magazine</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Real Estate</a></li>
+                                <li class="list-inline-item"><a href="/opinion">Video</a></li>
+                            </ul>
+                        </div>
+                    </div>  -->
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="col-12">
+                            <div class="footer-copy-right">
+                                <p class="font-small text-muted">© 2023, thestatesman.com | All rights reserved </p>
+								<div class="sub-footer-menu">
+									<ul class="subfooter-menu">
+										<li><a href="https://www.thestatesman.com/advertise-with-us">Advertise with us</a></li>
+										<li><a href="https://www.thestatesman.com/about-us">About</a></li>
+										<li><a href="https://www.thestatesman.com/privacy-policy">Privacy Policy</a></li>
+										<li><a href="https://www.thestatesman.com/contact-us">Contact</a></li>
+									</ul>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- End Footer -->
+    <div class="dark-mark"></div>
+    <!-- Vendor JS-->
+
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/modernizr-3.5.0.min.js" defer></script>
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/jquery-1.12.4.min.js" defer></script>
+	
+	
+	
+<script data-minify="1" type="text/javascript" src="https://www.thestatesman.com/wp-content/cache/min/1/slick/slick/slick.js?ver=1717466750" defer></script>
+
+<link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick.css" />
+	<link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+jQuery(document).ready(function($) {
+//     $('.glide__slides').slick({
+//   infinite: false,
+//   slidesToShow: 5,
+//   slidesToScroll: 2,
+//   dots: true,
+// });
+$('.glide__slides').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 5,
+  slidesToScroll: 2,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
+});	
+});</script>
+ 
+ <style type="text/css">
+
+/*.web-stories-sec{
+	width: 100%;
+}*/
+.story_top2{    width: 98%;display: flex;justify-content: space-between;
+    position: relative;
+    margin-bottom: 5px;    
+    align-items: center;
+    -webkit-box-pack: justify; 
+    -webkit-box-align: center;
+        margin: 15px 10px
+}
+.category_title {
+    color: #E1261C;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 27px;
+    background: #fff;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding-right: 5px;
+}
+.category_title a{color: #E1261C;text-decoration: none; }
+.story_top2:after {
+    border-bottom: 3px solid #E1261C;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 3px;
+}
+.see_more{     color: #E1261D;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 21px;
+    font-weight: bold;     text-decoration: none;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+   /* background-image: url(wp-content/themes/newsroomcms/images/arrow-icon.svg?v=1);*/
+    background-repeat: no-repeat;
+    background-position: 100% 43%;
+    padding-right: 21px;
+    background-size: 15px;
+    padding-left: 5px;
+    top: 5px; }
+.web_stories_list{
+
+}
+.glide__slides {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.stroy_list_row{
+	padding: 0 10px;
+}
+.stroy_list_row figure{
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+}
+.over-wrap{
+position: absolute;
+    bottom: 0;
+    background: transparent linear-gradient(
+180deg,#00000000 0%,#000000 100%) 0% 0% no-repeat padding-box;
+    height: 80%;
+    align-items: flex-end;
+    padding: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;	
+    display: flex;
+
+}
+.category_name{
+    color: #F7655F;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 21px;
+    font-weight: bold;
+}
+.category_name a {
+    color: #F7655F;
+}
+.story_title.head4{
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: bold;
+}
+.web-stories-sec2 .slick-prev{
+-webkit-transform: rotate(180deg);
+-ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    left: 16px;
+}
+.web-stories-sec2 .slick-arrow{
+	top: 101%;
+}
+
+.web-stories-sec2 .slick-arrow,
+.web-stories-sec2 .slick-prev:hover, .web-stories-sec2 .slick-prev:focus, .web-stories-sec2 .slick-next:hover, .web-stories-sec2 .slick-next:focus{
+   /* background: url(img/arrow-icon.svg); */
+    width: 21px;
+    height: 14px;
+    font-size: 0;
+    outline: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    z-index: 99;
+}
+.web-stories-sec2 .slick-next {
+    right: 16px;
+    top: 103%;
+}
+.web-stories-sec2 .slick-prev:before, .web-stories-sec2 .slick-next:before{
+	content: none;
+}
+.web-stories-sec2 .slick-dots li button{
+    width: 6px;
+    height: 6px;
+    background: #C7C7C7 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    border: 0;
+    margin: 0 5px
+}
+.web-stories-sec2 .slick-dots li button:before{
+	    color: #C7C7C7;
+	    width: 6px;
+    height: 6px;
+    content: none;
+}
+.web-stories-sec2 .slick-dots li button{ padding: 0; }
+.web-stories-sec2 .slick-dots li.slick-active button{
+	color: #E1261C;
+	    width: 20px;
+    height: 6px;
+     background: #E1261C 0% 0% no-repeat padding-box;
+}
+.web-stories-sec2 .slick-dots{
+    background: #EDEDED 0% 0% no-repeat padding-box;
+    background: #EDEDED 0% 0% no-repeat padding-box;
+    margin: 0 10px;
+    width: 98%;
+}
+
+.web_stories_list .glide__slides{
+		    display: block;
+	}
+.stroy_list{width: 220px;}
+ 
+</style>  
+	
+	
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/popper.min.js" defer></script>
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/bootstrap.min.js" defer></script>
+    <script data-minify="1" src="https://www.thestatesman.com/wp-content/cache/min/1/wp-content/themes/statesmantheme/assets/js/vendor/jquery.slicknav.js?ver=1717466750" defer></script>
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/slick.min.js" defer></script>
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/wow.min.js" defer></script>
+    <script data-minify="1" src="https://www.thestatesman.com/wp-content/cache/min/1/wp-content/themes/statesmantheme/assets/js/vendor/jquery.ticker.js?ver=1717466750" defer></script>
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/jquery.vticker-min.js" defer></script>
+
+
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/jquery.scrollUp.min.js" defer></script>
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/jquery.nice-select.min.js" defer></script>
+    <script data-minify="1" src="https://www.thestatesman.com/wp-content/cache/min/1/wp-content/themes/statesmantheme/assets/js/vendor/jquery.magnific-popup.js?ver=1717466750" defer></script>
+    <script data-minify="1" src="https://www.thestatesman.com/wp-content/cache/min/1/wp-content/themes/statesmantheme/assets/js/vendor/jquery.sticky.js?ver=1717466750" defer></script>
+    <script data-minify="1" src="https://www.thestatesman.com/wp-content/cache/min/1/wp-content/themes/statesmantheme/assets/js/vendor/perfect-scrollbar.js?ver=1717466750"></script>
+    <script src="https://www.thestatesman.com/wp-content/themes/statesmantheme/assets/js/vendor/waypoints.min.js" defer></script>
+    <script data-minify="1" src="https://www.thestatesman.com/wp-content/cache/min/1/wp-content/themes/statesmantheme/assets/js/vendor/jquery.theia.sticky.js?ver=1717466750" defer></script>
+    <!-- NewsBoard JS -->
+    <script data-minify="1" src="https://www.thestatesman.com/wp-content/cache/min/1/wp-content/themes/statesmantheme/assets/js/main.js?ver=1717466750" defer></script>
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+		jQuery( document ).ready(function() {	
+			jQuery('.key-candidate-slider').slick({
+			  slidesToShow: 5,
+			  slidesToScroll: 1,
+			  autoplay: true,
+			  autoplaySpeed: 2000,
+			  responsive: [
+				  {
+					breakpoint: 991,
+					settings: {
+					  slidesToShow: 3,
+					}
+				  },
+				  {
+					breakpoint: 767,
+					settings: {
+					  slidesToShow: 2,
+						centerMode: true,
+						centerPadding: '10%',
+					}
+				  },
+				  {
+					breakpoint: 500,
+					settings: {
+					  slidesToShow: 1,
+						centerMode: true,
+						centerPadding: '10%',
+					}
+				  }
+				]
+			});	
+		});
+	});</script>
+	<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.*)\/amp|\/web-stories\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.thestatesman.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.thestatesman.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+jQuery(document).ready(function ($) {
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    var newDate = new Date();
+    newDate.setDate(newDate.getDate());
+    $('#Date').html(dayNames[newDate.getDay()] + ", " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ', ' + newDate.getFullYear());
+});
+});</script>
+
+
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {	
+		jQuery(document).ready(function ($) {
+			jQuery('img').removeAttr('width').removeAttr('height');
+		});
+	});</script>
+
+</body>
+
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

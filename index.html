@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imagenes/escudo-removebg-preview.png" type="image/x-icon">
     <style>
+        /* Estilos adicionales en línea */
         .visitor-counter {
             position: fixed;
             top: 15px;
@@ -28,6 +29,42 @@
             vertical-align: middle;
             margin-left: 5px;
             height: 16px; /* Ajusta el tamaño de la imagen */
+        }
+        .search-bar {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .search-bar form {
+            display: flex;
+            align-items: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-bar button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #555;
+        }
+        .navbar ul {
+            display: flex;
+            align-items: center;
+        }
+        .navbar li {
+            list-style: none;
+            margin: 0 10px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
@@ -54,6 +91,12 @@
                     <li><a href="#jugadores">Jugadores</a></li>
                     <li><a href="#himno">Himno</a></li>
                     <li><a href="#contacto">Contacto</a></li>
+                    <li class="search-bar">
+                        <form action="https://www.google.com/search" method="get" target="_blank">
+                            <input type="text" name="q" placeholder="Buscar en Google">
+                            <button type="submit">Buscar</button>
+                        </form>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -118,7 +161,8 @@
                         <h3>Raúl González</h3>
                     </div>
                     <p>
-                        Raúl es el máximo goleador histórico del Real Madrid y un símbolo de la cantera del club, donde jugó más de 16 temporadas.
+                        Raúl es el máximo goleador histórico del Real Madrid y un símbolo de la cantera del club, donde jugó más de 
+                        16 temporadas.
                     </p>
                 </div>
             </div>
@@ -135,25 +179,25 @@
                     Tu navegador no soporta el elemento de video.
                 </video>
             </div>
-
+    
         </div>
     </section>
-
+    
     <footer class="footer-container" id="contacto">
         <h2>Contacto</h2>
-        <form action="send_email.php" method="post">
+        <form action="send_email.php" method="post" class="contact-form">
             <input class="campo" type="email" name="email" placeholder="Tu Gmail" required>
             <textarea class="campo" name="mensaje" placeholder="Escribe tu mensaje o queja" required></textarea>
             <input type="submit" class="btn-2" value="Enviar">
         </form>
-
+    
         <div class="footer-txt">
-            <p>
-                ¡Gracias por visitar nuestra página dedicada al Real Madrid! Descubre más sobre nuestra historia, jugadores y éxitos en cada sección.
+            <p class="contact-email">
+                Contacta con nosotros: <a href="mailto:danielgomez.jajaja8@gmail.com">danielgomez.jajaja8@gmail.com</a>
+
             </p>
         </div>
     </footer>
-
+    
 </body>
 </html>
-
